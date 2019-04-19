@@ -52,7 +52,7 @@ View(top_word)
 
 # Plotting the graph
 plot1<- ggplot(top_word, aes(x=word,y=n, fill=sentiment))+
-  geom_col(show.legend = FALSE)+
+  geom_col(show.legend = FALSE)+labs(title="Sentiment Analysis for books The Thousand Nights And A Night and Analects by Confucius", x="Word", y="Number of occurences")+
   #improve display
   facet_wrap(~sentiment, scales = "free")+
   coord_flip()
