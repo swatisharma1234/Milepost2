@@ -30,13 +30,13 @@ tidy_nights_analects_sorted <- tidy_nights_analects %>%
   count(word, sort=TRUE)
 View(tidy_nights_analects_sorted)
 
-# Adding sentiment for the dataset vy title and type using "bing"
+# Adding sentiment for the dataset by title and type using "bing"
 sentinment_nights_analects <- tidy_nights_analects %>% 
   inner_join(get_sentiments("bing"), c=("word"))%>%
   count(title, type, sentiment)
 View(sentinment_nights_analects)
 
-# Adding sentiment for the words in the dataset vy title and type using "bing"
+# Adding sentiment for the words in the dataset by title and type using "bing"
 word_nights_analects<- tidy_nights_analects %>% 
   inner_join(get_sentiments("bing"), c=("word"))%>%
   count(word, sentiment, sort=TRUE)
